@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SOURCE_DIR="/media/medion/Build"
+SOURCE_DIR="$HOME"
 KERNEL_BRANCH="v6.8.10"
 SURFACE_KERNEL="6.8"
 
