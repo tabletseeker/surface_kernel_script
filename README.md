@@ -1,4 +1,4 @@
-### surface_kernel_script
+# surface_kernel_script
 Automatically applies all patches while merging the appropriate kernel config and building the latest surface_kernel
 from the [linux-surface repository](https://github.com/linux-surface/linux-surface).
 
