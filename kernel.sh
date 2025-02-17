@@ -22,7 +22,7 @@ libssl-dev ccache bison flex libelf-dev xz-utils git
 [ -d "$SOURCE_DIR/linux" ] || git clone https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git --depth=1 --branch "$KERNEL_BRANCH" "$SOURCE_DIR/linux"
 #check if kernel version matches linux-config version or install latest version available
 sudo apt show linux-config-$LINUX_CONFIG &> /dev/null || \ 
-LINUX_CONFIG=$(sudo apt show linux-config-* 2> /dev/null | tac | grep -Pom1 "linux-config-[0-9].[0-9]+" | cut -d- -f3)
+LINUX_CONFIG=$(sudo apt show linux-config-* 2> /dev/null | tac | grep -Pom1 "linux-config-\d.\d+" | cut -d- -f3)
 sudo apt install -y linux-config-$LINUX_CONFIG
 #extract base-config
 sudo xz --decompress --keep --stdout /usr/src/linux-config-$LINUX_CONFIG/config.amd64_none_amd64.xz > "$SOURCE_DIR/base-config"
